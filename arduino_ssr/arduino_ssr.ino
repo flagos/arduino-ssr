@@ -160,7 +160,7 @@ void setup()
   digitalWrite( A1, 0 );      
   digitalWrite( A2, 0 );
   
-  Timer1.initialize(200000); // set a timer of length 20000 microseconds (or 0.02 sec - or 50Hz => frequency of electricity in europe)
+  Timer1.initialize(20000); // set a timer of length 20000 microseconds (or 0.02 sec - or 50Hz => frequency of electricity in europe)
   Timer1.attachInterrupt( timerIsr ); // attach the service routine here
   
   /* initialize the Ethernet adapter */
@@ -168,7 +168,7 @@ void setup()
 
   /* setup our default command that will be run when the user accesses
    * the root page on the server */
-  webserver.setDefaultCommand(&parsedCmd);
+  // webserver.setDefaultCommand(&parsedCmd);
   //webserver.setFailureCommand(&my_failCmd);
   
   webserver.addCommand("index.html", &parsedCmd);
