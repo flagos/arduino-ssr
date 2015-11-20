@@ -163,8 +163,10 @@ void setup()
   Timer1.initialize(20000); // set a timer of length 20000 microseconds (or 0.02 sec - or 50Hz => frequency of electricity in europe)
   Timer1.attachInterrupt( timerIsr ); // attach the service routine here
   
+  IPAddress ip(192, 168, 0, 177);
+  
   /* initialize the Ethernet adapter */
-  Ethernet.begin(mac);
+  Ethernet.begin(mac, ip);
 
   /* setup our default command that will be run when the user accesses
    * the root page on the server */
